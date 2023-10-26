@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "9Onmcv2XQ5+nWInh/6R3lKwIEeYU/AHWsPDPFufwU5Z5mduXEd3wudV5XEMrVhPbEUtbbzDr9Om/W3yKqt0TRA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\linda\\FM_5353_Projects\\HW2\\HW2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\linda\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.15\\microsoft.netcore.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\linda\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.15\\microsoft.windowsdesktop.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\linda\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.15\\microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\linda\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.15\\microsoft.netcore.app.host.win-x64.6.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}
