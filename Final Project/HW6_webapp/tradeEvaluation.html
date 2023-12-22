@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="exchange.css"> <!-- Separate CSS file for cleanliness -->
+    <title>Trade Evaluation</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <header class="header">
+            <h1>Trade Evaluation Dashboard</h1>
+        </header>
+        <div class="content">
+            <div class="controls">
+                <div class="input-group">
+                    <label for="TradeId">Trade ID:</label>
+                    <input id="TradeId" type="number" />
+                </div>
+                <div class="input-group">
+                    <label for="RatePointId">Rate Point ID:</label>
+                    <input id="RatePointId" type="number" />
+                </div>
+                <div class="input-group">
+                    <label for="underlyingFairPrice">Underlying Fair Price:</label>
+                    <input id="underlyingFairPrice" type="number" />
+                </div>
+                <div class="input-group">
+                    <label for = "EvaluationDate">Evalution Date:</label>
+                    <input type="date" id="EvaluationDate"/>
+                    <script language="JavaScript"> 
+          
+                        Date.prototype.toDateInputValue = (function() {
+                            var local = new Date(this); 
+                            local.setMinutes(this.getMinutes() - this.getTimezoneOffset()); 
+                            return local.toJSON().slice(0,10); });
+                        document.getElementById("EvaluationDate").value=new Date().toDateInputValue();                  
+                    </script> 
+                </div>
+                <p class="option-evaluation-header">
+                    Below for option evaluation
+                </p>                
+                <div class="input-group">
+                    <label for = "Steps">Steps of Monte Carlo:</label>
+                    <input type="number" id = "Steps" name = "Steps" required min = 1 value = "1000">
+                </div>
+
+                <div class="input-group">
+                    <label for = "Simulations">Simulations of Monte Carlo:</label>
+                    <input type="number" id = "Simulations" name = "Simulations" required min = 1 value ="1000">
+                </div>
+                <div class="input-group">
+                    <label for = "IsThread">Multithreading:</label>
+                    <select id = "IsThread" name ="IsThread">
+                        <option value = false>No</option>
+                        <option value = true>Yes</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for = "IsAntithetic">Antithetic:</label>
+                    <select id = "IsAntithetic" name ="IsAntithetic">
+                        <option value = false>No</option>
+                        <option value = true>Yes</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for = "IsDeltaCV">Delta Control Variate:</label>
+                    <select id = "IsDeltaCV" name ="IsDeltaCV">
+                        <option value = false>No</option>
+                        <option value = true>Yes</option>
+                    </select>    
+                </div>
+
+                <button id="evaluationRefresh" class = "frameButtons">Refresh Evaluation</button>
+                <button id="evaluationAdd" class="frameButtons">Add</button>
+                <p id="debug" class="debug-info"></p>
+            </div>
+            <div class="exchange-list">
+                <table id="evaluationList" class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Trade Id</th>
+                            <th>Rate Point Id</th>
+                            <th>Underlying Fair Price</th>
+                            <th>Evaluation Date</th>
+                            <th>Option Price</th>
+                            <th>Delta</th>
+                            <th>Gamma</th>
+                            <th>Vega</th>
+                            <th>Theta</th>
+                            <th>Rho</th>
+                            <th>Evaluation Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="evaluationListBody">
+                        <!-- Data rows go here -->
+                    </tbody>
+                </table>
+                <p id="info" class="info-text"></p>
+            </div>
+        </div>
+    </div>
+    <script src="tradeEvaluation.js"></script>
+</body>
+
+</html>

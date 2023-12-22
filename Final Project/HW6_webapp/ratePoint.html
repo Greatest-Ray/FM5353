@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="exchange.css"> <!-- Separate CSS file for cleanliness -->
+    <title>Rate Point Dashboard</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <header class="header">
+            <h1>Rate Point Dashboard</h1>
+        </header>
+        <div class="content">
+            <div class="controls">
+                <button id="ratePointRefresh" class = "frameButtons">Refresh Rate Point</button>
+                <div class="input-group">
+                    <label for="rateCurveId">Rate Curve Id:</label>
+                    <input id="rateCurveId" type="number"/>
+                </div>
+                <div class="input-group">
+                    <label for="Term">Term:</label>
+                    <input id="Term" type="number"/>
+                </div>
+
+                <div class="input-group">
+                    <label for="annualized">Annualized Rate:</label>
+                    <input id="rate" type="number" min =0 max = 1 step = ".01" value = "0.05">
+                </div>
+
+                <div class="input-group">
+                    <label for = "RecordDate">Record Date:</label>
+                    <input type="date" id="RecordDate"  />
+                    <script language="JavaScript"> 
+          
+                        Date.prototype.toDateInputValue = (function() {
+                            var local = new Date(this); 
+                            local.setMinutes(this.getMinutes() - this.getTimezoneOffset()); 
+                            return local.toJSON().slice(0,10); });
+                        document.getElementById("RecordDate").value=new Date().toDateInputValue();                  
+                    </script> 
+                </div>
+                <button id="rateCurveAdd" class="frameButtons">Add</button>
+                <p id="debug" class="debug-info"></p>
+            </div>
+            <div class="exchange-list">
+                <table id="rateCurveList" class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Rate Curve Id</th>
+                            <th>Record Date</th>
+                            <th>Term</th>
+                            <th>Annualized Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rateCurveListBody">
+                        <!-- Data rows go here -->
+                    </tbody>
+                </table>
+                <p id="info" class="info-text"></p>
+            </div>
+        </div>
+    </div>
+    <script src="ratePoint.js"></script>
+</body>
+
+</html>

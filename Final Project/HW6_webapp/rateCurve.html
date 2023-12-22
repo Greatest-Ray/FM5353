@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="exchange.css"> <!-- Separate CSS file for cleanliness -->
+    <title>RateCurve Dashboard</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <header class="header">
+            <h1>RateCurve Dashboard</h1>
+        </header>
+        <div class="content">
+            <div class="controls">
+                <button id="rateCurveRefresh" class = "frameButtons">Refresh Rate Curve</button>
+                <div class="input-group">
+                    <label for="rateCurveName">Rate Curve Name:</label>
+                    <input id="rateCurveName" type="text" />
+                </div>
+                <div class="input-group">
+                    <label for="rateCurveSymbol">Rate Curve Symbol:</label>
+                    <input id="rateCurveSymbol" type="text" />
+                </div>
+                <button id="rateCurveAdd" class="frameButtons">Add</button>
+                <p id="debug" class="debug-info"></p>
+            </div>
+            <div class="exchange-list">
+                <table id="rateCurveList" class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Symbol</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rateCurveListBody">
+                        <!-- Data rows go here -->
+                    </tbody>
+                </table>
+                <p id="info" class="info-text"></p>
+            </div>
+        </div>
+    </div>
+    <script src="rateCurve.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="exchange.css"> <!-- Separate CSS file for cleanliness -->
+    <title>Market Dashboard</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <header class="header">
+            <h1>Market Dashboard</h1>
+        </header>
+        <div class="content">
+            <div class="controls">
+                <button id="marketRefresh" class="frameButtons">Refresh Market</button>
+                <div class="input-group">
+                    <label for="marketName">Market Name:</label>
+                    <input id="marketName" type="text" />
+                </div>
+                <div class="input-group">
+                    <label for="exchangeID">Exchange ID:</label>
+                    <input id="exchangeID" type="number" />
+                </div>
+                <button id="marketAdd" class="frameButtons">Add</button>
+                <p id="debug" class="debug-info"></p>
+            </div>
+            <div class="exchange-list">
+                <table id="marketList" class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Market Name</th>
+                            <th>Exchange ID</th>
+                        </tr>
+                    </thead>
+                    <tbody id="marketListBody">
+                        <!-- Data rows go here -->
+                    </tbody>
+                </table>
+                <p id="info" class="info-text"></p>
+            </div>
+        </div>
+    </div>
+    <script src="market.js"></script>
+</body>
+
+</html>

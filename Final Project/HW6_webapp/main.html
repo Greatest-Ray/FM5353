@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>FM5353 Final Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5; /* Light grey background */
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    background-color: #333; /* Dark background for the header */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.logo {
+    height: 50px; /* Adjust as necessary */
+    display: inline-block;
+}
+
+h1 {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.navigation {
+    display: flex;
+    flex-grow: 1;
+}
+
+.nav-menu {
+    width: 20%;
+    background-color: #404040; /* Darker side column for contrast */
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #ddd; /* Light text color for contrast */
+    padding: 15px 20px;
+    border-bottom: 1px solid #555; /* Subtle separator */
+    transition: background-color 0.3s;
+    display: block; /* Make the whole area clickable */
+    font-size: 16px;
+}
+
+.nav-item:hover {
+    background-color: #505050; /* Slightly lighter on hover */
+    color: white;
+}
+
+.nav-item i {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.frameCol2 {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <img src="logo.png" alt="Company Logo" class="logo"> 
+            <h1>Welcome to the Portfolio Management Toolkit</h1>
+            <h2>This application is created by Xianhui Lei</h2>
+        </header>
+        <div class="navigation">
+            <!-- Frame selections -->
+            <div class="nav-menu">
+                <a id = "exchange" href="#" class="nav-item"><i class="fas fa-exchange-alt"></i> Exchange</a>
+                <a id = "market" href="#" class="nav-item"><i class="fas fa-chart-line"></i> Market</a>
+                <a id = "unit" href="#" class="nav-item"><i class="fas fa-cube"></i> Unit</a>
+                <a id = "underlying" href="#" class="nav-item"><i class="fas fa-chart-pie"></i> Underlying</a>
+                <a id = "option" href="#" class="nav-item"><i class="fas fa-briefcase"></i> Option</a> <!-- Ensure the icon class is correct -->
+                <a id = "future" href="#" class="nav-item"><i class="fas fa-cube"></i> Future</a> 
+                <a id = "trade" href="#" class="nav-item"><i class="fas fa-briefcase"></i> Portfolio</a>
+                <a id = "evalution" href="#" class="nav-item"><i class="fas fa-chart-pie"></i> Trade Evaluation</a>
+                <a id = "ratepoint" href="#" class="nav-item"><i class="fas fa-tachometer-alt"></i> Rate Point</a>
+                <a id = "ratecurve" href="#" class="nav-item"><i class="fas fa-chart-line"></i> Rate Curve</a> 
+            </div>
+            <div class="frameCol2">
+                <iframe id="display" src="url" title="description"></iframe>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

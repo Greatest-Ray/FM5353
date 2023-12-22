@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="exchange.css"> <!-- Separate CSS file for cleanliness -->
+    <title>Portfolio Dashboard</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <header class="header">
+            <h1>Portfolio Dashboard</h1>
+        </header>
+        <div class="content">
+            <div class="controls">
+                <button id="tradeRefresh" class = "frameButtons">Refresh Portfolio</button>
+                <div class="input-group">
+                    <label for="InstrumentId">Instrument ID:</label>
+                    <input id="InstrumentId" type="number"/>
+                </div>
+
+                <div class="input-group">
+                    <label for="InstrumentType">Instrument Type:</label>
+                    <select id="InstrumentType" name="InstrumentType">
+                        <option value = "underlying">Underlying </option>
+                        <option value = "option">Option</option>
+                        <option value = "future">Future</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="tradePrice">Trading Price:</label>
+                    <input id="tradePrice" type="number" />
+                </div>
+
+                <div class="input-group">
+                    <label for = "TradeDate">Trade Date:</label>
+                    <input type="date" id="TradeDate"  />
+                    <script language="JavaScript"> 
+          
+                        Date.prototype.toDateInputValue = (function() {
+                            var local = new Date(this); 
+                            local.setMinutes(this.getMinutes() - this.getTimezoneOffset()); 
+                            return local.toJSON().slice(0,10); });
+                        document.getElementById("TradeDate").value=new Date().toDateInputValue();                  
+                    </script> 
+                </div>
+
+                <div class="input-group">
+                    <label for="quantity">Quantity:</label>
+                    <input id="quantity" type="number" />
+                </div>
+
+                <button id=tradeAdd class="frameButtons">Add</button>
+                <p id="debug" class="debug-info"></p>
+            </div>
+            <div class="exchange-list">
+                <table id="tradeList" class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Instrument ID</th>
+                            <th>Instrument Type</th>
+                            <th>Trading Price</th>
+                            <th>Trade Date</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tradeListBody">
+                        <!-- Data rows go here -->
+                    </tbody>
+                </table>
+                <p id="info" class="info-text"></p>
+            </div>
+        </div>
+    </div>
+    <script src="portfolio.js"></script>
+</body>
+
+</html>

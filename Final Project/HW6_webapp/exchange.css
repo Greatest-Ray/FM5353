@@ -1,0 +1,142 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.header h1 {
+    color: #333;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls, .exchange-list {
+    flex: 1;
+    margin: 10px;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.frameButtons {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.frameButtons:hover {
+    background-color: #0056b3;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: separate; /* Allows for spacing between cells */
+    border-spacing: 0 10px; /* Adjusts spacing between rows, you can increase the first value for spacing between columns */
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table thead th {
+    background-color: #009879; /* Adjust to your preferred color */
+    color: #ffffff;
+    text-align: left;
+    padding: 12px 20px; /* Increase padding to create more space */
+    font-weight: bold;
+}
+
+.styled-table tbody td {
+    padding: 12px 20px; /* Consistent padding with headers */
+    text-align: left;
+}
+
+.styled-table tbody tr {
+    background-color: #f3f3f3;
+    border-bottom: thin solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #efefef;
+}
+
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.debug-info, .info-text {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+}
+
+.header-item {
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.option-evaluation-header {
+    font-weight: bold; /* Makes text bold */
+    font-size: 1.2em; /* Increases the size of the text */
+    color: #333; /* Dark grey color for better readability */
+    padding: 10px 0; /* Adds some space above and below the text */
+    margin: 20px 0; /* Additional spacing from other elements */
+    border-bottom: 2px solid #009879; /* A line for visual separation and emphasis */
+}

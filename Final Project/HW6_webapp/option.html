@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="exchange.css"> <!-- Separate CSS file for cleanliness -->
+    <title>Portfolio Management Page</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <header class="header">
+            <h1>Option Dashboard</h1>
+        </header>
+        <div class="content">
+            <div class="controls">
+                <button id="optionRefresh" class="frameButtons">Refresh Option</button>
+                <div class="input-group">
+                    <label for="UnderlyingId">Underlying ID:</label>
+                    <input id="UnderlyingId" type="text" />
+                </div>
+                <div class="input-group">
+                    <label for="OptionType">Option Type:</label>
+                    <select id="OptionType" name="OptionType">
+                        <option value = "european">European</option>
+                        <option value = "asian">Asian</option>
+                        <option value = "digital">Digital</option>
+                        <option value = "barrier">Barrier</option>
+                        <option value = "lookback">Lookback</option>
+                        <option value = "range">Range</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for = "ExpirationDate">Expiration Date:</label>
+                    <input type="date" id="ExpirationDate"/>
+                    <script language="JavaScript"> 
+          
+                        Date.prototype.toDateInputValue = (function() {
+                            var local = new Date(this); 
+                            local.setMinutes(this.getMinutes() - this.getTimezoneOffset()); 
+                            return local.toJSON().slice(0,10); });
+                        document.getElementById("ExpirationDate").value=new Date().toDateInputValue();                  
+                    </script> 
+                </div>
+
+                <div class="input-group">
+                    <label for="Strike">Strike:</label>
+                    <input type="number" id = "Strike" name = "Strike" required min = 0 step = '.01' value ="100">
+                </div>
+
+                <div class="input-group">
+                    <label for="Volatility">Volatility:</label>
+                    <input type="number" id = "Volatility" name = "Volatility" required min = 0 max = 1 step = ".01" value = "0.2">
+                </div>
+
+                <div class="input-group">
+                    <label for="IsCall">Option Style:</label>
+                    <select id="IsCall" name="IsCall">
+                        <option value = true>Call</option>
+                        <option value = false>Put</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for ="KnockType">Knock Type:</label>
+                    <select id="KnockType" name="KnockType">
+                        <option value = "up and in">Up and In</option>
+                        <option value = "up and out">Up and Out</option>
+                        <option value = "down and in">Down and In</option>
+                        <option value = "down and out">Down and Out</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for = "PayOut">PayOut:</label>
+                    <input type="number" id = "PayOut" name = "PayOut" required min = 0 step = '.01' value = "0">
+                </div>
+
+                <div class="input-group">
+                    <label for = "BarrierLevel">Barrier Level:</label>
+                    <input type="number" id = "BarrierLevel" name = "BarrierLevel" required min = 0 value = "0">
+                </div>
+
+                <button id="OptionAdd" class="frameButtons">Add</button>
+                <p id="debug" class="debug-info"></p>
+            </div>
+            <div class="exchange-list">
+                <table id="optionList" class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Underlying Id</th>
+                            <th>Option Type</th>
+                            <th>Expiration Date</th>
+                            <th>Strike</th>
+                            <th>Vol</th>
+                            <th>Option Style</th>
+                            <th>Knock Type</th>
+                            <th>PayOut</th>
+                            <th>Barrier Level</th>
+                        </tr>
+                    </thead>
+                    <tbody id="exchangeListBody">
+                        <!-- Data rows go here -->
+                    </tbody>
+                </table>
+                <p id="info" class="info-text"></p>
+            </div>
+        </div>
+    </div>
+    <script src="option.js"></script>
+</body>
+
+</html>
